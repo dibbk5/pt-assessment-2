@@ -33,7 +33,9 @@ const cart = [
     }
 ]
 
-//CODE HERE
+const totalPrice = cart.reduce((num1, num2) => num1 + num2.price, 0)
+
+console.log(totalPrice)
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
@@ -53,8 +55,12 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let finalPrice = cartTotal + (cartTotal * tax) - couponValue
+    return finalPrice
+}
 
+console.log(calcFinalPrice(10, 1, .05))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +84,10 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    name: string //we want to know who they are (string because the value will be a name)
+    trips: number //we want to know how many times the customer has come to the restraurant (number because we want to see the number of how many times they have come to the restaurant)
+    days: number //This would be the number of days since the last time the customer came to the restraurant. This would be good information to have to see if you have lost customers around a certain amount of days back (number because we want to use it in calculations)
+    food: array //This would display a list of all of the items the customer has ordered. This could help you know what your most popular dishes are (array so that we can continue to add items to a long list)
 
 */
 
@@ -87,4 +96,9 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const newCustomer = {
+    name: "Koy Dibb",
+    trips: 10,
+    days: 365,
+    food: ["Meat Lovers", "Spicy", "Gluten Cheese"]
+}
